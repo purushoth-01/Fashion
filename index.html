@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="shortcut icon"
+      href="./asset/e-commerc.png"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>FASHION</title>
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- HEADER SECTION -->
+    <section
+      class="flex justify-center bg-[url('./asset/main.png')] bg-cover bg-no-repeat bg-top sticky top-0"
+    >
+      <header
+        class="h-13 w-full bg-gray-900 text-white p-4 md:h-fit md:flex items-center justify-between gap-5 overflow-hidden lg:w-[75vw] lg:rounded-2xl"
+      >
+        <div class="w-full flex justify-between items-center md:w-fit">
+          <div>
+            <h1
+              class="flex items-center text-xl font-bold cursor-pointer text-yellow-500 "
+            >
+              FASHION
+            </h1>
+          </div>
+          <div class="md:hidden" id="bardiv">
+            <i class="fa-solid fa-bars" id="menubar"></i>
+          </div>
+        </div>
+        <div class="flex flex-col items-end gap-0 md:flex-row gap-8">
+          <nav class="flex gap-8">
+            <ul
+              class="flex flex-col gap-0 md:flex-row gap-9"
+            >
+              <li data-page="home"    class="px-1 cursor-pointer hover:text-orange-500 ">Home</li>
+              <li data-page="about"   class="px-1 cursor-pointer hover:text-orange-500 ">About</li>
+              <li data-page="profile" class="px-1 cursor-pointer hover:text-orange-500 ">Profile</li>
+              <li data-page="shop"    class="px-1 cursor-pointer hover:text-orange-500 ">Shop</li>
+              <li data-page="contact" class="px-1 cursor-pointer hover:text-orange-500 ">Contact</li>
+            </ul>
+          </nav>
+          <div>
+            <i
+              id="headcartIcon"
+              class="fa-solid fa-cart-shopping text-2xl cursor-pointer"
+            ></i>
+          </div>
+        </div>
+      </header>
+      <!-- HEADER ASIDE -->
+      <aside
+        class="hidden fixed top-0 left-0 h-dvh overflow-y-auto w-[330px] md:w-[500px] bg-white shadow-2xl"
+      >
+        <div
+          class="flex items-center justify-between text-xl p-2 bg-gray-800 text-white"
+        >
+          <h1 class="flex">
+            <img src="./asset/e-commerc.png" class="h-17" alt="" />
+            <span
+              id="nofproduct"
+              class="outline bg-red-700 rounded-2xl h-6 px-2 pb-2"
+              >0</span
+            >
+          </h1>
+          <h1 id="totalprice">₹0/-</h1>
+        </div>
+        <ul></ul>
+      </aside>
+    </section>
+
+    <!-- MAIN SECTION -->
+    <main>
+      <!-- HOME SECTION -->
+      <section id="home">
+        <div
+          id="homemainpage"
+          class="bg-[url('./asset/main.png')] bg-cover bg-no-repeat bg-center"
+        >
+          <div
+            class="flex items-center justify-center gap-3 p-5 pt-10 overflow-hidden md:justify-between lg:gap-0"
+          >
+            <div class=" ">
+              <select
+                name=""
+                id=""
+                class="bg-gray-800 text-white text-sm border-3 p-1 rounded-md cursor-pointer w-[25vw] md:w-[20vw] md:text-xl lg:w-50"
+              >
+                <option value="">All Category</option>
+                <option value="">Men</option>
+                <option value="">Women</option>
+                <option value="">Child</option>
+              </select>
+            </div>
+            <div class="flex w-3/4 md:w-3/7 lg:w-4/9">
+              <input
+                type="text"
+                placeholder="Search this blog"
+                class="bg-white px-2 flex-1"
+              />
+              <button
+                class="bg-red-500 text-white p-1 rounded-sm cursor-pointer md:p-2"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+            <div>
+              <select
+                name=""
+                id=""
+                class="hidden md:block outline bg-blue-800 text-white p-2 px-5 border-2 rounded-sm cursor-pointer"
+              >
+                <option value="">Language</option>
+                <option value="">English</option>
+                <option value="">hindi</option>
+                <option value="">Tamil</option>
+              </select>
+            </div>
+            <div class="flex gap-1 text-2xl md:text-3xl md:gap-4">
+              <div id="bardiv" class="hidden md:block cursor-pointer">
+                <i class="fa-solid fa-bars" id="menubar"></i>
+              </div>
+              <div>
+                <i
+                  id="cartIcon"
+                  class="fa-solid fa-cart-shopping cursor-pointer"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-center px-5">
+            <div
+              class="hidden lg:block bg-gray-300 p-3 text-3xl rounded-4xl cursor-pointer"
+            >
+              <i class="fa-solid fa-angle-left"></i>
+            </div>
+            <div
+              class="w-full h-[80vh] text-white font-bold flex flex-col justify-center items-center gap-7 text-3xl md:text-5xl lg:text-6xl"
+            >
+              <h1>GET START</h1>
+              <h1>YOUR FAVRIOT SHOPPING</h1>
+              <button
+                id="buybtn"
+                class="text-2xl p-2 px-5 rounded-xl bg-gray-900 cursor-pointer"
+              >
+                BUY NOW
+              </button>
+            </div>
+            <div
+              class="hidden lg:block bg-gray-300 p-3 text-3xl rounded-4xl cursor-pointer"
+            >
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </div>
+          <div class="flex justify-center items-center gap- font-bold">
+            <h1 class="p-3 text-5xl tracking-widest">
+              FASHION
+
+              <span class="px-4 bg-red-500 text-white rounded-sm">TRENDS</span>
+            </h1>
+          </div>
+        </div>
+        <div id="hometreandpage">
+          <div
+            class="grid grid-cols-1 justify-center items-center gap-5 p-5 pt-10 text-6xl font-bold text-white [&_div]:cursor-pointer lg:grid-cols-4"
+          >
+            <div
+              class="h-100 w-full relative bg-[url('./asset/homeshoe')] bg-cover bg-no-repeat bg-center before:content[''] before:absolute before:inset-0 before:bg-gray-900/50 flex flex-col items-center justify-center md:h-140 lg:h-100"
+            >
+              <h1 class="absolute z-10">
+                <span class="text-9xl text-red-400">I</span>N Trends
+              </h1>
+            </div>
+            <div
+              class="h-100 w-full relative bg-[url('./asset/homemen')] bg-cover bg-no-repeat bg-center before:content[''] before:absolute before:inset-0 before:bg-gray-900/50 flex items-center justify-center md:h-140 lg:h-100"
+            >
+              <h1 class="absolute z-10">
+                <span class="text-9xl text-gray-500">4</span>men
+              </h1>
+            </div>
+            <div
+              class="h-100 w-full relative bg-[url('./asset/homewomen')] bg-cover bg-no-repeat md:bg-top before:content[''] before:absolute before:inset-0 before:bg-gray-900/50 flex items-center justify-center md:h-140 lg:h-100"
+            >
+              <h1 class="absolute z-10">
+                <span class="text-9xl text-gray-500">4</span>Women
+              </h1>
+            </div>
+            <div
+              class="h-100 w-full relative bg-[url('./asset/homewatch')] bg-cover bg-no-repeat bg-center before:content[''] before:absolute before:inset-0 before:bg-gray-900/50 flex items-center justify-center md:h-140 lg:h-100"
+            >
+              <h1 class="absolute z-10">
+                <span class="text-9xl text-gray-500">E</span>xtra
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div id="homeshoppage">
+          <div class="bg-blue-200 p-7">
+            <div class="py-5">
+              <h1 class="text-5xl">
+                <span class="text-9xl font-bold text-red-500"> N</span>ew
+                Collections
+              </h1>
+            </div>
+            <div
+              class="grid items-center place-items-center grid-cols-1 gap-3 text-center text-2xl md:grid-cols-2 lg:grid-cols-3"
+            >
+              <div>
+                <figure class="">
+                  <img src="./asset/img2" alt="" class="w-full" />
+                  <h1>Men Puffer Coat</h1>
+                  <h2>
+                    <i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star-half"></i>
+                  </h2>
+                  <h2>₹450.00/-</h2>
+                  <button
+                    class="bg-yellow-500 text-white text-xl p-2 px-4 rounded-sm cursor-pointer"
+                  >
+                    BUY NOW <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </figure>
+              </div>
+              <div>
+                <figure class="">
+                  <img src="./asset/img3" alt="" class="w-full" />
+                  <h1>LongLine Coat</h1>
+                  <h2>
+                    <i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star-half"></i>
+                  </h2>
+                  <h2>₹890.00/-</h2>
+                  <button
+                    class="bg-yellow-500 text-white text-xl p-2 px-4 rounded-sm cursor-pointer"
+                  >
+                    BUY NOW <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </figure>
+              </div>
+              <div>
+                <figure class="">
+                  <img src="./asset/img1" alt="" class="w-full" />
+                  <h1>Marten Shoe</h1>
+                  <h2>
+                    <i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star-half"></i>
+                  </h2>
+                  <h2>₹780.00/-</h2>
+                  <button
+                    class="bg-yellow-500 text-white text-xl p-2 px-4 rounded-sm cursor-pointer"
+                  >
+                    BUY NOW <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </figure>
+              </div>
+            </div>
+            <div class="w-full text-center pt-5">
+              <button id="MoreProduct"
+                class="bg-red-600 text-white text-2xl font-bold rounded-md p-2 px-6 cursor-pointer"
+              >
+                More Product
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="homeofferpage">
+          <div class="p-10">
+            <div class="py-5">
+              <h1 class="text-5xl">
+                <span class="text-9xl text-gray-600 font-bold">L</span>ive
+                Offers
+              </h1>
+            </div>
+            <div
+              class="grid grid-cols-1 gap-10 [&_figure]:cursor-pointer md:grid-cols-2 lg:grid-cols-3"
+            >
+              <div>
+                <figure>
+                  <img src="./asset/offers-Men.jpg" alt="" />
+                </figure>
+              </div>
+              <div>
+                <figure>
+                  <img src="./asset/offers-women.jpg" alt="" />
+                </figure>
+              </div>
+              <div>
+                <figure>
+                  <img src="./asset/offersothers.jpg" alt="" />
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- HOME ASIDE -->
+      <aside
+        class="hidden fixed top-0 left-0 h-dvh overflow-y-auto w-[330px] md:w-[500px] bg-white shadow-2xl"
+      >
+        <div
+          class="flex items-center justify-between text-xl p-2 bg-gray-800 text-white"
+        >
+          <h1 class="flex">
+            <img src="./asset/e-commerc.png" class="h-17" alt="" />
+            <span
+              id="nofproduct"
+              class="outline bg-red-700 rounded-2xl h-6 px-2 pb-2"
+              >0</span
+            >
+          </h1>
+          <h1 id="totalprice">₹0/-</h1>
+        </div>
+        <ul></ul>
+      </aside>
+
+      <!-- ABOUT SECTION -->
+      <section id="about">
+        <div
+          class="h-dvh text-white relative bg-[url('./asset/company.avif')] bg-cover bg-no-repeat bg-center before:content[''] before:absolute before:inset-0 before:bg-black/50"
+        >
+          <div
+            class="w-full text-white absolute z-20 flex flex-col items-center justify-center gap-5 py-10"
+          >
+            <h1 class="text-9xl"><i class="fa-brands fa-flutter"></i></h1>
+            <h1 class="text-5xl md:text-7xl font-bold">Our Company</h1>
+            <p class="text-center text-xl w-[90vw]">
+              Pellentesque habitant morbi tristique senectus et netus et
+              malesuada fames ac turpis egestas. Duis sed sapien justo. Nullam
+              ultrices eleifend augue. Nullam convallis volutpat fringilla.
+              Class aptent taciti sociosqu ad litora torquent per conubia
+              nostra, per inceptos himenaeos.nvallis mi sed, fringilla augue. In
+              gravida velit a erat volutpat cursus. Donec ante mi, mattis eu
+              posuere sed, dictum vel dolor. Etiam ac pellentesque nulla, eget
+              ornare est. Praesent consectetur orci arcu, at interdum lacus
+              dignissim eu. Proin at nisl porttitor augue sollicitudin vehicula.
+              Nulla vestibulum gravida leo , non tincidunt eros condimentum et.
+              Sed pretium elementum neque quis accumsan. Suspendisse facilisis
+              imperdiet ante, et egestas orci dapibus id. Suspendisse
+              pellentesque tellus sit amet dignissim dignissim. Cras eget
+              gravida nunc. Nunc viverra mollis leo vel pulvinar.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div
+            class="h-[40vh] w-full bg-[url('./asset/founder')] bg-cover bg-no-repeat bg-start lg:h-[80vh]"
+          ></div>
+          <div
+            class="flex flex-col items-center justify-center gap-3 p-1 bg-gray-100"
+          >
+            <h1 class="text-3xl">The Founder</h1>
+            <h3 class="font-italic">Maria Dwayne</h3>
+            <h2 class="text-center">
+              Donec ultricies convallis facilisis. Morbi at risus laoreet,
+              mattis odio quis, volutpat quam. Sed sit amet lectus interdum,
+              lobortis velit vitae, efficitur est. Integer nec erat ac augue
+              lobortis tristique. Proin non tortor vitae libero rutrum posuere.
+            </h2>
+          </div>
+        </div>
+        <div>
+          <div class="text-center py-15">
+            <h1 class="text-5xl font-bold">Our Partners</h1>
+          </div>
+          <marquee behavior="scroll" direction="left" scrollamount="10">
+            <div class="grid grid-cols-6 justify-center gap-5">
+              <figure>
+                <img
+                  src="./asset/aboutimg1"
+                  alt=""
+                  class="h-30 md:h-60 lg:h-90"
+                />
+              </figure>
+              <figure>
+                <img
+                  src="./asset/aboutimg2"
+                  alt=""
+                  class="h-20 md:h-40 lg:h-60"
+                />
+              </figure>
+              <figure>
+                <img
+                  src="./asset/aboutimg3"
+                  alt=""
+                  class="h-30 md:h-60 lg:h-90"
+                />
+              </figure>
+              <figure>
+                <img
+                  src="./asset/aboutimg4"
+                  alt=""
+                  class="h-20 md:h-40 lg:h-60"
+                />
+              </figure>
+              <figure>
+                <img
+                  src="./asset/aboutimg5"
+                  alt=""
+                  class="h-30 md:h-60 lg:h-90"
+                />
+              </figure>
+              <figure>
+                <img
+                  src="./asset/aboutimg6"
+                  alt=""
+                  class="h-20 md:h-40 lg:h-60"
+                />
+              </figure>
+            </div>
+          </marquee>
+        </div>
+      </section>
+      <!-- shop section -->
+      <section id="shop">
+       <div class="flex flex-col md:flex-row">
+       
+         <div class="flex flex-col p-3 bg-black w-full md:w-[25vw]">
+          <h1 class="text-5xl text-white ">
+            <span class="text-9xl font-bold text-red-500 "> S</span>how Now
+          </h1>
+          <nav class="flex-1">
+            <ul  class="flex flex-col text-white"></ul>
+          </nav>
+          <div class="">
+            <button id="shopcheckbtn" class="text-white font-bold bg-gray-500 p-2 rounded-sm cursor-pointer ">CHECK COLLECTION</button>
+
+          </div>
+        </div>
+         <div class="  bg-[url('./asset/shopimg2')] bg-cover bg-no-repeat bg-center flex flex-col items-end justify-end p-20 h-[50vh] w-full md:flex-1 lg:h-dvh ">
+           <!-- <div> -->
+            <h1 class="text-white font-bold text-7xl lg:text-9xl">FASHION TRENDS</h1>
+           </div>
+        </div>
+        
+       </div>
+
+        <div
+          id="cardcontainer"
+          class="grid grid-col-1 gap-5 p-4 md:grid-cols-2 gap-3 lg:grid-cols-3 gap-3 xl:grid-cols-4 gap-3"
+        ></div>
+      </section>
+      <section id="view">
+        <article class="flex justify-center items-center w-full"></article>
+      </section>
+      <!-- Profile section -->
+      <section id="profile">
+        <div
+          class="h-[75vh] bg-[url('./asset/profilebg')] bg-cover bg-no-repeat bg-center before:content[''] relative before:absolute before:inset-0 before:bg-blue-300/80"
+        >
+          <div
+            class="absolute z-20 h-[70vh] w-full flex flex-col items-center justify-center gap-5"
+          >
+            <figure>
+              <img src="./asset/profileimg" alt="" class="h-40 rounded-full" />
+            </figure>
+            <h1 class="md:w-[55vw] text-3xl text-center">
+              “Really awesome to be a part of this group, Happy with my
+              purchase”
+            </h1>
+          </div>
+        </div>
+        <!-- profile section2 -->
+        <div class="md:flex p-5">
+          <div
+            class="bg-[url('./asset/profileimg1')] bg-cover bg-no-repeat bg-center h-dvh w-full md:h-[80vh] md:w-[15vw] lg:h-[110vh] lg:w-[15vw]"
+          ></div>
+          <div class="flex-1">
+            <div>
+              <h1 class="p-3 text-4xl font-bold">Fashion Accessories</h1>
+            </div>
+            <div
+              class="grid grid-cols-1 items-center place-items-center gap-3 p-3 md:grid-cols-2 lg:grid-cols-3"
+            >
+              <div>
+                <figure class="text-center">
+                  <img src="./asset/profileimg3" alt="" />
+                  <h1>Red Justo</h1>
+                  <h1 class="font-bold">$300.00</h1>
+                </figure>
+              </div>
+              <div>
+                <figure class="text-center">
+                  <img src="./asset/profileimg4" alt="" />
+                  <h1>Morbitempus</h1>
+                  <h1 class="font-bold">$300.00</h1>
+                </figure>
+              </div>
+              <div>
+                <figure class="text-center">
+                  <img src="./asset/profileimg5" alt="" />
+                  <h1>Acelerisqu</h1>
+                  <h1 class="font-bold">$300.00</h1>
+                </figure>
+              </div>
+              <div>
+                <figure class="text-center">
+                  <img src="./asset/profileimg6" alt="" />
+                  <h1>Faucibus in</h1>
+                  <h1 class="font-bold">$300.00</h1>
+                </figure>
+              </div>
+              <div>
+                <figure class="text-center">
+                  <img src="./asset/profileimg7" alt="" />
+                  <h1>Quisqgwe</h1>
+                  <h1 class="font-bold">$300.00</h1>
+                </figure>
+              </div>
+              <div>
+                <figure class="text-center">
+                  <img src="./asset/profileimg8" alt="" />
+                  <h1>Ertcelerisqu</h1>
+                  <h1 class="font-bold">$300.00</h1>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[url('./asset/profileimg2')] bg-cover bg-no-repeat bg-center flex flex-col justify-center gap-6 p-3 h-[50vh] w-full md:h-[80vh] md:w-[15vw] lg:h-[110vh] lg:w-[15vw]"
+          >
+            <h1 class="w-1/2 bg-orange-500 p-2 font-bold text-2xl text-white">
+              latest
+            </h1>
+            <h1 class="w-2/3 bg-blue-500 p-2 font-bold text-2xl text-white">
+              Fashion
+            </h1>
+            <h1 class="w-1/2 bg-yellow-500 p-2 font-bold text-2xl text-white">
+              Wear
+            </h1>
+          </div>
+        </div>
+        <!-- profile section3 -->
+        <div>
+          <div class="text-center py-5">
+            <h1 class="text-3xl font-bold">@Fashion on Instagram</h1>
+            <h2 class="text-2xl">#ShopMania</h2>
+          </div>
+          <div
+            class="grid grid-cols-1 gap-2 p-2 place-items-center [&_img]:rounded-xl md:grid-cols-2 lg:grid-cols-5"
+          >
+            <figure><img src="./asset/profileintra1" alt="" /></figure>
+            <figure><img src="./asset/profileintra2" alt="" /></figure>
+            <figure><img src="./asset/profileintra3" alt="" /></figure>
+            <figure><img src="./asset/profileintra4" alt="" /></figure>
+            <figure><img src="./asset/profileintra5" alt="" /></figure>
+          </div>
+          <div class="flex justify-center items-center text-3xl py-8">
+            <i class="fa-brands fa-square-instagram"></i>
+            <h1 id="intralogo" class=" hover:text-blue-800 cursor-pointer">Fashion_Look</h1>
+          </div>
+        </div>
+        <!-- profile section4 -->
+        <div
+          class="h-[80vh] mt-10 bg-[url('./asset/profilecilentbg.png')] bg-cover bg-no-repeat bg-center before:content[''] relative before:absolute before:inset-0 before:bg-black/50"
+        >
+          <div class="absolute z-20 w-full">
+            <div
+              class="p-5 text-white text-3xl font-bold flex flex-col justify-center items-center gap-3 md:text-4xl"
+            >
+              <h1>What Our Customers Say</h1>
+              <h1>-------⭐-------</h1>
+            </div>
+            <!-- div down -->
+            <div
+              class="grid grid-cols-1 items-center justify-center gap-5 p-3 text-center text-white md:grid-cols-1 lg:grid-cols-3"
+            >
+              <div class="flex flex-col gap-5 p-5 border-5 text-xl">
+                <div>
+                  <p>
+                    Donec et urna vel risus feugiat pharetra. Proin id lacus
+                    vitae velit accumsan venenatis. Aenean non mi vel nisi
+                    lacinia maximus hksask.
+                  </p>
+                </div>
+                <div>
+                  <figure class="flex items-center justify-center gap-3">
+                    <img
+                      src="./asset/profilecilent1"
+                      alt=""
+                      class="rounded-full h-15"
+                    />
+                    <h1>Mike Smith</h1>
+                  </figure>
+                </div>
+              </div>
+              <div class="flex flex-col gap-5 p-5 border-5 text-xl">
+                <div>
+                  <p>
+                    Donec et urna vel risus feugiat pharetra. Proin id lacus
+                    vitae velit accumsan venenatis. Aenean non mi vel nisi
+                    lacinia maximus hksask.
+                  </p>
+                </div>
+                <div>
+                  <figure class="flex items-center justify-center gap-3">
+                    <img
+                      src="./asset/profilecilent2"
+                      alt=""
+                      class="rounded-full h-15"
+                    />
+                    <h1>Mike Smith</h1>
+                  </figure>
+                </div>
+              </div>
+              <div class="flex flex-col gap-5 p-5 border-5 text-xl">
+                <div>
+                  <p>
+                    Donec et urna vel risus feugiat pharetra. Proin id lacus
+                    vitae velit accumsan venenatis. Aenean non mi vel nisi
+                    lacinia maximus hksask.
+                  </p>
+                </div>
+                <div>
+                  <figure class="flex items-center justify-center gap-3">
+                    <img
+                      src="./asset/profilecilent3"
+                      alt=""
+                      class="rounded-full h-15"
+                    />
+                    <h1>Mike Smith</h1>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- contact section -->
+      <section id="contact">
+        <div
+          class="text-center p-10 flex items-center justify-center gap-2 text-5xl font-bold"
+        >
+          <h1 class="">Contact</h1>
+          <span class="bg-red-500 px-2 rounded-sm text-white">US</span>
+        </div>
+
+        <div class="md:flex">
+          <div>
+            <figure>
+              <img
+                src="./asset/tailer"
+                alt=""
+                class="h-[15vh] md:h-[30vh] lg:h-[60vh]"
+              />
+            </figure>
+          </div>
+          <div
+            class="w-full flex flex-col items-center justify-center gap-3 p-3 bg-gray-800 text-center text-white"
+          >
+            <h1 class="text-4xl text-yellow-500 font-bold">Custom Tailoring</h1>
+            <p class="w-2/3">
+              Donec et semper neque. Quisque aliquet dictumneque, id dapibus
+              diam viverra quis
+            </p>
+            <button class="bg-yellow-800 p-2 rounded-md cursor-pointer">
+              BOOK APPOINTMENT
+            </button>
+          </div>
+        </div>
+
+        <!-- section input -->
+
+        <div
+          class="m-3 p-4 h-[85vh] bg-violet-300 grid grid-cols-1 lg:grid-cols-2 md:gap-6"
+        >
+          <div class="flex flex-col gap-5">
+            <div>
+              <h1 class="text-2xl font-bold">SingUp/Register</h1>
+            </div>
+            <div class="flex flex-col gap-2">
+              <input
+                type="text"
+                placeholder="Enter Your Name"
+                class="px-2 h-10 rounded-md bg-white"
+              />
+              <input
+                type="email"
+                placeholder="Enter Your Email"
+                class="px-2 h-10 rounded-md bg-white"
+              />
+              <input
+                type="number"
+                placeholder="Contact Number"
+                class="px-2 h-10 rounded-md bg-white"
+              />
+              <textarea
+                name="text"
+                id=""
+                placeholder="Message"
+                class="px-2 h-40 rounded-md bg-white"
+              ></textarea>
+            </div>
+            <div class="w-full flex justify-center items-center">
+              <button
+                class="bg-red-400 w-2/7 text-2xl font-bold cursor-pointer rounded-md"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+          <div class="p-2 flex flex-col justify-center gap-5">
+            <h1 class="text-5xl font-bold">Contact Us</h1>
+            <p class="text-xl">
+              Have questions, need assistance, or want to share your feedback?
+              Our team is here to help — feel free to reach out anytime
+            </p>
+            <div
+              class="grid grid-cols-1 gap-3 place-items-start md:grid-cols-2"
+            >
+              <div class="flex items-center justify-center gap-3">
+                <div class="p-3 rounded-full bg-white text-3xl">
+                  <i class="fa-solid fa-envelopes-bulk"></i>
+                </div>
+                <div>
+                  <h1 class="font-bold text-xl">Email</h1>
+                  <p class="cursor-pointer hover:text-blue-700">
+                    hello@rfashionecc.com
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center justify-center gap-3">
+                <div class="p-3 rounded-full bg-white text-3xl">
+                  <i class="fa-solid fa-envelopes-bulk"></i>
+                </div>
+                <div>
+                  <h1 class="font-bold text-xl">Website</h1>
+                  <p class="cursor-pointer hover:text-blue-700">
+                    fashionecommerce.com
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center justify-center gap-3">
+                <div class="p-3 rounded-full bg-white text-3xl">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <h1 class="font-bold text-xl">Phone</h1>
+                  <p class="cursor-pointer hover:text-blue-700">
+                    +123-456-7890
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center justify-center gap-3">
+                <div class="p-3 rounded-full bg-white text-3xl">
+                  <i class="fa-solid fa-envelopes-bulk"></i>
+                </div>
+                <div>
+                  <h1 class="font-bold text-xl">Location</h1>
+                  <p class="cursor-pointer hover:text-blue-700">
+                    123 Anywhere St., Any City
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- map section -->
+        <div
+          class="my-17 h-[60vh] bg-[url('./asset/map.png')] bg-cover bg-no-repeat bg-center"
+        >
+          <div class="bg-gray-900 text-white p-5 text-gray-200 w-1/2 lg:w-1/4">
+            <h1 class="font-bold text-yellow-500">London Eye</h1>
+            <p>
+              Riverside Building, County Hall, Westminster Bridge Rd, London SE1
+              7PB, United Kingdom
+            </p>
+            <p>
+              4.5⭐⭐⭐⭐
+              <span class="text-blue-500 cursor-pointer">
+                1,96,456 reviews</span
+              >
+            </p>
+            <p class="text-blue-500"><a href="">View Large Map</a></p>
+          </div>
+        </div>
+        <footer id="footer">
+          <div
+            class="bg-black text-white p-5 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4"
+          >
+            <div class="flex flex-col gap-3">
+              <h1 class="text-2xl font-bold text-yellow-500">About Us</h1>
+              <p>
+                Phasellus ac eros at urna condimentum lacinia. Pellentesque
+                habitant morbi tristique senectus et netus et malesuada fames ac
+                turpis egestas.
+              </p>
+              <div class=" flex [&_li]:hover:text-blue-500">
+                <li>
+                <i class="fa-brands fa-instagram cursor-pointer"></i>
+                </li>
+                <li>
+                <i class="fa-brands fa-facebook cursor-pointer"></i>
+                </li>
+                <li>
+                <i class="fa-brands fa-x-twitter cursor-pointer"></i>
+                </li>
+                <li>
+                <i class="fa-brands fa-youtube cursor-pointer"></i>
+
+                </li>
+              </div>
+            </div>
+            <div class="bg-black text-white p-5 grid grid-cols-1 gap-2">
+              <h1 class="text-2xl font-bold text-yellow-500">Quick Links</h1>
+              <ul class="[&_li]:hover:text-blue-500 [&_li]:cursor-pointer">
+                <li>Order Tracking</li>
+                <li>Return/Exchange</li>
+                <li>Privacy Policy</li>
+                <li>Blog</li>
+                <li>Catalog</li>
+              </ul>
+            </div>
+            <div class="bg-black text-white p-5 grid grid-cols-1 gap-2">
+              <h1 class="text-2xl font-bold text-yellow-500">Shop Now</h1>
+              <ul class="[&_li]:hover:text-blue-500 [&_li]:cursor-pointer">
+                <li>Men</li>
+                <li>Women</li>
+                <li>Skin Care</li>
+                <li>Gift Card</li>
+                <li>Winter</li>
+              </ul>
+            </div>
+            <div class="bg-black text-white p-5 grid grid-cols-1 gap-2">
+              <h1 class="text-2xl font-bold text-yellow-500">
+                Contact Details
+              </h1>
+              <p>
+                49 Featherstone Street London EC1Y8SY United Kingdom Toll Free
+                No. 1800-384-4854 Email Id - fashionEcc@Yahoo.in
+              </p>
+              <div class="cursor-pointer">
+                <img src="./asset/footerimg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center text-md p-3 bg-gray-900 text-white">
+            <p>© 2026 Fashion Ecommerce Made with <a href="" class="hover:text-blue-500">Fashion WordPress Theme</a></p>
+          </div>
+        </footer>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
